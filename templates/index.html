@@ -40,30 +40,31 @@
                 </p>
             </div>
             <div class="row">
+                {% for project in project_list %}
                 <div class="col-sm-4 col-xs-12">
                     <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">
                         <div class="img-wrapper"\>
-                            <img src="https://codixital.com/storage/phptXGjrt.png" class="img-responsive" alt="Lorem ipsum" style="width: 100%;padding: 15px;height: 100px;object-fit: cover;min-width: 100%;">
+                            <img src="https://codixital.com/storage/phptXGjrt.png" class="img-responsive" alt="{{ project.title }}" style="width: 100%;padding: 15px;height: 100px;object-fit: cover;min-width: 100%;">
                             <div class="overlay">
                                 <div class="buttons">
                                     <a rel="gallery" class="fancybox" href="https://codixital.com/storage/phptXGjrt.png">Demo</a>
-                                    <a target="_blank" href="">Details</a>
+                                    <a target="_blank" href="{% url 'project_detail' project.slug %}">Details</a>
                                 </div>
                             </div>
                         </div>
                         <figcaption>
                             <h4>
                                 <a href="{% url 'project_detail' project.slug %}">
-                                    Lorem ipsum
+                                    {{ project.title }}
                                 </a>
                             </h4>
                             <p>
-                                Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+                                {{ project.content | safe }}
                             </p>
                         </figcaption>
                         <div class="item-details">
                             <div class="item-name">
-                                <p class="item-title">Lorem ipsum</p>
+                                <p class="item-title">{{ project.title }}</p>
                                 <p class="item-link">www.codixital.ro</p>
                             </div>
                             <div class="item-logo">
@@ -72,115 +73,9 @@
                         </div>
                     </figure>
                 </div>
+                {% endfor %}
             </div>
         </div>
     </section> <!-- #works -->
-
-    <section id="feature">
-        <div class="container">
-            <div class="section-heading">
-                <h1 class="title wow fadeInDown" data-wow-delay=".3s">Services</h1>
-                <p class="wow fadeInDown" data-wow-delay=".5s">
-                    We empower visionary leaders to ride the wave of the digital transformation with solutions that generate tangible business results. <br>Partnering with us means taking advantage of technology for solving problems, automating processes, and driving business growth. <br> Thanks to agile and lean startup methods, we deliver high-quality software at top speed and efficiency.
-                </p>
-            </div>
-            <div class="row">
-                <div class="col-md-4 col-lg-4 col-xs-12">
-                    <div class="media wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="300ms">
-                        <div class="media-left">
-                            <div class="icon">
-                                <img src="https://jatapp.com/wp-content/uploads/2019/02/icon-people.svg" class="attachment-thumbnail_70x70 size-thumbnail_70x70" alt="" style="width: 100%;padding: 25px;">
-                            </div>
-                        </div>
-                        <div class="media-body">
-                            <h4 class="media-heading">
-                                Dedicated<br>
-                                Development Team</h4>
-                            <p>Reduce your development costs and scale your delivery capacity by utilizing the largest talent pool of IT specialists in Eastern Europe.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-lg-4 col-xs-12">
-                    <div class="media wow fadeInDown animated" data-wow-duration="500ms" data-wow-delay="600ms">
-                        <div class="media-left">
-                            <div class="icon">
-                                <img src="https://jatapp.com/wp-content/uploads/2019/02/icon-prototype.svg" class="attachment-thumbnail_70x70 size-thumbnail_70x70" alt="" style="width: 100%;padding: 25px;">
-                            </div>
-                        </div>
-                        <div class="media-body">
-                            <h4 class="media-heading">Application<br>
-                                Development</h4>
-                            <p>Bring your ideas to life with our decade-long expertise in complex software development for SMBs and large enterprises.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-lg-4 col-xs-12">
-                    <div class="media wow fadeInDown animated" data-wow-duration="500ms" data-wow-delay="900ms">
-                        <div class="media-left">
-                            <div class="icon">
-                                <img src="https://jatapp.com/wp-content/uploads/2019/02/icon-mobile.svg" class="attachment-thumbnail_70x70 size-thumbnail_70x70" alt="" style="width: 100%;padding: 25px;">
-                            </div>
-                        </div>
-                        <div class="media-body">
-                            <h4 class="media-heading">Mobile App<br>
-                                Development</h4>
-                            <p>We use in-depth industry knowledge and new technologies to create mobile apps that stand out from the crowd and make money.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-lg-4 col-xs-12">
-                    <div class="media wow fadeInDown animated" data-wow-duration="500ms" data-wow-delay="1500ms">
-                        <div class="media-left">
-                            <div class="icon">
-                                <img src="https://jatapp.com/wp-content/uploads/2019/02/icon-testing.svg" class="attachment-thumbnail_70x70 size-thumbnail_70x70" alt="" style="width: 100%;padding: 25px;">
-                            </div>
-                        </div>
-                        <div class="media-body">
-                            <h4 class="media-heading">
-                                QA & Software<br>
-                                Testing</h4>
-                            <p>Cut your testing costs and shorten your time to market by leveraging our Software Quality Assurance experience.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-lg-4 col-xs-12">
-                    <div class="media wow fadeInDown animated" data-wow-duration="500ms" data-wow-delay="1500ms">
-                        <div class="media-left">
-                            <div class="icon">
-                                <img src="https://jatapp.com/wp-content/uploads/2019/02/icon-service.svg" class="attachment-thumbnail_70x70 size-thumbnail_70x70" alt="" style="width: 100%;padding: 25px;">
-                            </div>
-                        </div>
-                        <div class="media-body">
-                            <h4 class="media-heading">
-                                Support<br>
-                                Services</h4>
-                            <p>We provide organizations with a cost-efficient customer and technical support that results in fast response times and high user satisfaction.
-
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-lg-4 col-xs-12">
-                    <div class="media wow fadeInDown animated" data-wow-duration="500ms" data-wow-delay="1800ms">
-                        <div class="media-left">
-                            <div class="icon">
-                                <img src="https://jatapp.com/wp-content/uploads/2019/02/icon-designsvg.svg" class="attachment-thumbnail_70x70 size-thumbnail_70x70" alt="" style="width: 100%;padding: 25px;">
-                            </div>
-                        </div>
-                        <div class="media-body">
-                            <h4 class="media-heading">UI/UX<br>
-                                Design</h4>
-                            <p>We create responsive user interfaces with appealing design and engaging user experiences that have a lasting impact.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> <!-- /#feature -->
 
 {% endblock %}
